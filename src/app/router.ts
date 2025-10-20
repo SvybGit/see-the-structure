@@ -1,4 +1,5 @@
 import mainPage from './pages/main-page.html?raw';
+import stackPage from './pages/stack-page.html?raw';
 
 function render() {
     const container = document.getElementById("app")!;
@@ -8,6 +9,9 @@ function render() {
     switch (path) {
         case "main":
             container.innerHTML = mainPage;
+            break;
+        case "stack":
+            container.innerHTML = stackPage;
             break;
         default:
             container.innerHTML = /*html*/`
