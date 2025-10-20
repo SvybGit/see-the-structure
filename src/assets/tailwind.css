@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer base {
+}
+
+h1 {
+    @apply text-6xl font-extrabold;
+}
+
+a {
+    @apply  text-indigo-400 font-bold hover:text-indigo-700 hover:cursor-pointer
+}
