@@ -1,9 +1,11 @@
 import { MainPage } from './pages/main-page/main-page';
+import { StackPage } from "./pages/stack-page/stack-page.ts";
 import { NotFoundPage } from './pages/not-found-page';
 import { type Page } from './pages/page';
 
 const pages: Record<string, Page> = {
     "main" : new MainPage(),
+    "stack" : new StackPage()
 }
 
 function render() {
