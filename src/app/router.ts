@@ -1,20 +1,18 @@
-import mainPage from './pages/main-page.html?raw';
+import { MainPage } from './pages/main-page/main-page';
+import { NotFoundPage } from './pages/not-found-page';
+import { type Page } from './pages/page';
+
+const pages: Record<string, Page> = {
+    "main" : new MainPage(),
+}
 
 function render() {
     const container = document.getElementById("app")!;
     container.innerHTML = "";
     const path = window.location.hash.slice(1) || "main";
     console.log(path);
-    switch (path) {
-        case "main":
-            container.innerHTML = mainPage;
-            break;
-        default:
-            container.innerHTML = /*html*/`
-                <h1>404 not found</h1>
-            `
-            break;
-    }
+    let page: Page = pages[path] ??  new NotFoundPage();
+    page.render(container);
 }
 
 window.addEventListener("hashchange", render);
