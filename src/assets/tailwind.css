@@ -1,6 +1,50 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --color-background: 18 8 31;
+    --color-background-glow: 75 29 120;
+    --color-surface: 74 47 103;
+    --color-primary: 116 123 224;
+    --color-text: 241 245 249;
+  }
+}
+
+@layer components {
+  .panel-card {
+    @apply rounded-[1.5rem] p-7 shadow-[0_18px_48px_rgba(10,4,18,0.35)] backdrop-blur-sm;
+    border: 1px solid rgb(var(--color-text) / 0.1);
+    background-color: rgb(var(--color-surface) / 0.52);
+  }
+
+  .panel-label {
+    @apply text-xs font-semibold uppercase tracking-[0.3em];
+    color: rgb(var(--color-primary) / 0.88);
+  }
+
+  .action-button {
+    @apply rounded-2xl px-4 py-3 font-semibold disabled:cursor-not-allowed disabled:opacity-50;
+    border: 1px solid rgb(var(--color-text) / 0.1);
+    color: rgb(var(--color-text));
+  }
+
+  .stack-shell {
+    @apply min-h-[42rem] rounded-[1.75rem] p-4 shadow-[0_22px_56px_rgba(7,3,15,0.45)] sm:p-6 xl:min-h-full xl:p-8;
+    border: 1px solid rgb(var(--color-text) / 0.1);
+    background-color: rgb(var(--color-background) / 0.35);
+  }
+
+  .stack-frame {
+    @apply relative w-full max-w-3xl rounded-[1.5rem] px-4 pb-4 pt-8 sm:px-6 sm:pb-6 sm:pt-9 xl:px-8 xl:pb-8 xl:pt-10;
+    border: 1px solid rgb(var(--color-text) / 0.1);
+    background-color: rgb(var(--color-surface) / 0.7);
+  }
+
+  .stack-well {
+    @apply min-h-[34rem] rounded-[1.25rem] p-3 sm:min-h-[35rem] sm:p-4 xl:min-h-[36rem] xl:p-6;
+    border: 1px solid rgb(var(--color-text) / 0.08);
+    background-color: rgb(var(--color-background) / 0.92);
+  }
 }
 
 h1 {
@@ -9,4 +53,8 @@ h1 {
 
 a {
     @apply  text-indigo-400 font-bold hover:text-indigo-700 hover:cursor-pointer
+}
+
+button {
+    @apply bg-indigo-400 border-1 rounded-lg p-1 min-w-fit hover:bg-indigo-500 hover:cursor-pointer active:bg-indigo-700 transition-all duration-75
 }

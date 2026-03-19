@@ -1,0 +1,51 @@
+<div id="stack-page" class="min-h-full overflow-hidden bg-[radial-gradient(circle_at_top,rgb(var(--color-background-glow))_0%,rgb(var(--color-background))_45%,rgb(var(--color-background))_100%)] px-6 py-8 text-[rgb(var(--color-text))] xl:px-10">
+    <div class="mx-auto grid min-h-[calc(100vh-6rem)] max-w-[110rem] gap-8 xl:grid-cols-[24rem_minmax(0,1fr)] xl:items-stretch">
+        <div class="flex flex-col gap-6">
+            <section class="panel-card">
+                <p class="panel-label">Data Structure</p>
+                <h1 class="mt-3 text-5xl font-black tracking-tight text-[rgb(var(--color-text))]">Stack</h1>
+                <p class="mt-5 text-sm leading-7 text-[rgb(var(--color-text)_/_0.78)]">
+                    Last in, first out. Push adds to the top. Pop removes the top item.
+                </p>
+            </section>
+
+            <section class="panel-card">
+                <p class="panel-label">Actions</p>
+
+                <label class="mt-6 block text-sm font-semibold text-[rgb(var(--color-text)_/_0.9)]" for="input">Next value</label>
+                <input
+                    class="mt-2 w-full rounded-2xl border border-[rgb(var(--color-text)_/_0.1)] bg-[rgb(var(--color-background)_/_0.55)] px-4 py-3 text-base text-[rgb(var(--color-text))] outline-none transition placeholder:text-[rgb(var(--color-text)_/_0.45)] focus:border-[rgb(var(--color-primary)_/_0.7)] focus:ring-2 focus:ring-[rgb(var(--color-primary)_/_0.7)]"
+                    placeholder="Type a value..."
+                    id="input"
+                    type="text"
+                    name="stack-value"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    autocorrect="off"
+                    spellcheck="false"
+                >
+
+                <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 xl:grid-cols-1">
+                    <button id="push-btn" class="action-button bg-[rgb(var(--color-primary)_/_0.75)] hover:bg-[rgb(var(--color-primary)_/_0.92)] disabled:hover:bg-[rgb(var(--color-primary)_/_0.75)]">
+                        Push
+                    </button>
+                    <button id="pop-btn" class="action-button bg-[rgb(var(--color-primary)_/_0.9)] hover:bg-[rgb(var(--color-primary))] disabled:hover:bg-[rgb(var(--color-primary)_/_0.9)]">
+                        Pop
+                    </button>
+                    <button id="clear-btn" class="action-button bg-[rgb(var(--color-primary)_/_0.9)] hover:bg-[rgb(var(--color-primary))] disabled:hover:bg-[rgb(var(--color-primary)_/_0.9)]">
+                        Clear
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <section id="stack-panel" class="stack-shell relative flex items-center justify-center">
+            <div class="stack-frame">
+                <div class="absolute left-1/2 top-3 h-3 w-28 -translate-x-1/2 rounded-full bg-[rgb(var(--color-primary)_/_0.7)] sm:top-4 sm:w-32"></div>
+                <div id="stack" class="stack-well flex h-fit flex-col">
+                    <div id="stack-items" class="mt-auto flex flex-col justify-end gap-2 sm:gap-2.5 xl:gap-3"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
